@@ -265,11 +265,11 @@ h4 {
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: .3rem;
-  padding: 0.5rem 0.5rem;
+  gap: .35rem;
+  padding: .55rem 1.1rem;
   border-radius: var(--r-full);
   font-weight: 600;
-  font-size: .8rem;
+  font-size: .85rem;
   transition: background var(--t-fast), color var(--t-fast),
     box-shadow var(--t-fast), transform var(--t-fast);
   white-space: nowrap;
@@ -1263,24 +1263,28 @@ h4 {
   opacity: .45;
 }
 
-/* Purchase Action Row (Price & Buy Button side-by-side) */
+/* Purchase Action Row — mobile-first, wraps on small screens */
 .purchase-action-row {
   display: flex;
-  gap: .75rem;
+  flex-wrap: wrap;
+  gap: .6rem;
   align-items: stretch;
 }
 
 /* Price display */
 .price-display {
-  flex: 1;
-  padding: .75rem;
+  flex: 1 1 0;
+  min-width: 0;          /* prevent overflow */
+  padding: .75rem 1rem;
   background: var(--brand-subtle);
   border: 1.5px solid var(--border);
   border-radius: var(--r-lg);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: .5rem;
   transition: background var(--t-base);
+  overflow: hidden;      /* clip long text */
 }
 
 .price-display.ready {
@@ -1316,23 +1320,43 @@ h4 {
 }
 
 .price-selected-info {
-  font-size: .75rem;
+  font-size: .72rem;
   color: var(--text-2);
-  max-width: 200px;
+  max-width: 120px;        /* giới hạn để không đẩy nút */
   text-align: right;
-  line-height: 1.4;
+  line-height: 1.35;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
-/* Buy button */
+/* Buy button — full-width khi hàng wrap, auto khi side-by-side */
 .btn-buy {
-  flex: 0 0 auto;
+  flex: 1 1 auto;          /* co giãn cùng row */
+  min-width: 120px;
   white-space: nowrap;
-  padding: .5rem 1rem;
-  font-size: 1rem;
+  padding: .85rem 1.25rem;
+  font-size: .95rem;
   font-weight: 700;
   justify-content: center;
   border-radius: var(--r-lg);
   letter-spacing: .02em;
+}
+
+/* Mobile: mỗi phần chiếm full width */
+@media (max-width: 400px) {
+  .purchase-action-row {
+    flex-direction: column;
+  }
+  .price-display {
+    flex: unset;
+    width: 100%;
+  }
+  .btn-buy {
+    flex: unset;
+    width: 100%;
+  }
 }
 
 .btn-buy:disabled {

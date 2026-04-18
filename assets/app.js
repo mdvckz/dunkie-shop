@@ -422,7 +422,7 @@ function renderDetail(productId) {
     </div>
 
     <!-- Description -->
-    <div class="detail-desc-card" style="margin-top: 2rem;">
+    <div class="detail-desc-card" style="margin-top: 1rem;">
       <h3>Mô tả sản phẩm</h3>
       <p>${p.desc}</p>
     </div>

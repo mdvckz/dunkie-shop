@@ -345,12 +345,6 @@ function renderDetail(productId) {
           <div class="trust-pill">⚡ Xử lý 5 - 15 phút</div>
           <div class="trust-pill">💬 Hỗ trợ Zalo 24/7</div>
         </div>
-      
-      <!-- Notes -->
-        <div class="detail-features-card" id="detail-note-container" style="display: none;">
-          <h4>Lưu ý đính kèm</h4>
-          <ul id="variant-note-text"></ul>
-        </div>
       </div>
       <!-- RIGHT -->
       <div class="detail-right">
@@ -421,8 +415,14 @@ function renderDetail(productId) {
       </div>
     </div>
 
+    <!-- Notes — full width, hiện khi chọn xong variant -->
+    <div class="detail-desc-card" id="detail-note-container" style="display: none; margin-top: .75rem;">
+      <h3>Lưu ý đính kèm</h3>
+      <ul id="variant-note-text"></ul>
+    </div>
+
     <!-- Description -->
-    <div class="detail-desc-card" style="margin-top: 1rem;">
+    <div class="detail-desc-card" style="margin-top: .75rem;">
       <h3>Mô tả sản phẩm</h3>
       <p>${p.desc}</p>
     </div>

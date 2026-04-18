@@ -1324,7 +1324,7 @@ h4 {
 .price-selected-info {
   font-size: .72rem;
   color: var(--text-2);
-  max-width: 120px;
+  /* max-width: 120px; */
   /* giới hạn để không đẩy nút */
   text-align: right;
   line-height: 1.35;
@@ -1336,7 +1336,7 @@ h4 {
 
 /* Buy button — full-width khi hàng wrap, auto khi side-by-side */
 .btn-buy {
-  flex: 1 1 auto;
+  flex: 0.1 0.1 auto;
   /* co giãn cùng row */
   min-width: 120px;
   white-space: nowrap;

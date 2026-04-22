@@ -409,6 +409,13 @@ h4 {
   flex-shrink: 0;
 }
 
+.brand-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .brand-info {
   display: flex;
   flex-direction: column;
